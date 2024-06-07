@@ -16,10 +16,10 @@
                 <tbody>
                     @foreach ($products as $product)
                         <tr>
-                            <td>{{ $product->getId() }}</td>
-                            <td>{{ $product->getName() }}</td>
-                            <td>${{ $product->getPrice() }}</td>
-                            <td>{{ session('products')[$product->getId()] }}</td>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>${{ $product->price }}</td>
+                            <td>{{ session('products')[$product->id] }}</td>
                         </tr>
                     @endforeach
                 </tbody>

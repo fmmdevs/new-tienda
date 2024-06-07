@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminHomeController;
-use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MyAccountController;
@@ -23,11 +23,11 @@ Route::get('/about', [HomeController::class, 'about'])
     ->name("home.about");
 
 // Rutas products por category (men o women)
-Route::get('/products/{category}', [ProductController::class, 'index'])
+Route::get('/product/{category}', [ProductController::class, 'index'])
     ->name("product.index");
 
 
-Route::get('/products/{id}', [ProductController::class, 'show'])
+Route::get('/product/show/{id}', [ProductController::class, 'show'])
     ->name("product.show");
 
 // Rutas cart
@@ -46,11 +46,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-account/orders', [MyAccountController::class, 'orders'])->name("myaccount.orders");
 });
 
-// Middleware admin: routa solo disponible para usuarios cuyo rol sea admin
+// Middleware admin: ruta solo disponible para usuarios cuyo rol sea admin
 Route::middleware('admin')->group(function () {
 
-    Route::get('/admin', [AdminHomeController::class, 'index'])
-        ->name('admin.home.index');
+    Route::view('/admin', 'admin.home.index')->name('admin.home.index');
+
+    // Rutas para administracion de productos
 
     Route::get('/admin/products', [AdminProductController::class, 'index'])
         ->name('admin.product.index');
@@ -66,4 +67,21 @@ Route::middleware('admin')->group(function () {
 
     Route::put('/admin/products/{id}/update', [AdminProductController::class, 'update'])
         ->name("admin.product.update");
+
+    // Rutas para administracion de categorias
+
+    Route::get('/admin/categories', [AdminCategoryController::class, 'index'])
+        ->name('admin.category.index');
+
+    Route::post('/admin/categories/store', [AdminCategoryController::class, 'store'])
+        ->name('admin.category.store');
+
+    Route::delete('/admin/categories/{id}/delete', [AdminCategoryController::class, 'delete'])
+        ->name('admin.category.delete');
+
+    Route::get('/admin/categories/{id}/edit', [AdminCategoryController::class, 'edit'])
+        ->name('admin.category.edit');
+
+    Route::put('/admin/categories/{id}/update', [AdminCategoryController::class, 'update'])
+        ->name('admin.category.update');
 });

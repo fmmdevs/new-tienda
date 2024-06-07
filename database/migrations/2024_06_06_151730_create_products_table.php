@@ -25,6 +25,8 @@ return new class extends Migration
             $table->timestamps();
 
             // añadimos relacion con la tabla categories
+            // es una relacion 1 a muchos
+            // La misma categoria (1) puede pertenecer a varios productos (muchos)
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
         });

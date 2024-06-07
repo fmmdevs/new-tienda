@@ -47,12 +47,14 @@
                                     {{ __('Categories') }}
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="{{ route('product.index', 'men') }}">{{ __('Men') }}</a></li>
-                                    <li><a class="dropdown-item"
-                                            href="{{ route('product.index', 'women') }}">{{ __('Women') }}</a></li>
-                                    {{-- <li><hr class="dropdown-divider"></li> --}}
-                                    {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
+                                    {{-- Generamos las categorias de forma dinamica usando un view composer --}}
+                                    @foreach ($categories as $category)
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('product.index', $category->name) }}">{{ __($category->name) }}</a>
+                                        </li>
+                                    @endforeach
+
+
                                 </ul>
                             </li>
 
@@ -62,6 +64,12 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('cart.index') }}">{{ __('Cart') }}</a>
                             </li>
+                            @auth
+                                {{-- Si esta autenticado mostramos My orders --}}
+                                <li class="nav-item ms-md-4 ms-lg-5">
+                                    <a class="nav-link " href="{{ route('myaccount.orders') }}">My Orders</a>
+                                </li>
+                            @endauth
                             <li class="nav-item mx-md-4 mx-lg-5">
                                 <a class="nav-link" href="{{ route('home.contact') }}">{{ __('Contact') }}</a>
                             </li>
@@ -95,11 +103,17 @@ y dentro del dropdown puede hacer logout --}}
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        @if (Auth::user()->role == 'admin')
+                                            <a class="dropdown-item" href="{{ route('admin.home.index') }}">
+                                                {{ __('Admin Panel') }} </a>
+                                        @endif
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             class="d-none">
@@ -121,9 +135,7 @@ y dentro del dropdown puede hacer logout --}}
         </div>
 
         <footer class="copyright py-4 text-center text-black">
-
-            <small>
-                Copyright - 2024 </small>
+            <div class="container"> <small> Copyright - 2024 </small> </div>
         </footer>
     </div>
 

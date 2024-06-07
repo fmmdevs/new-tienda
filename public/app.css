@@ -15,7 +15,18 @@ footer {
     bottom: 0;
     width: 100%;
     height: 2.5rem;
+    padding: 10px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
     /* Footer height */
 }
 
 /* -------------------------------------------------- */
+
+
+/* imagen perfil admin */
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+}

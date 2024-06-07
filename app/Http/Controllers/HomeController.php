@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // Si creamos una categoria desde el panel de admin automaticamente se añade al dropdown
         return view('home.index');
     }
 

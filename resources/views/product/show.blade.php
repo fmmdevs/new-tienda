@@ -1,21 +1,22 @@
 @extends('layouts.app')
-{{-- @section('title', $viewData['title']) --}}
+@section('title', 'Detail')
 {{-- @section('subtitle', $viewData['subtitle']) --}}
 @section('content')
+    <h1>Show</h1>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                @if (isset($product['image']))
-                    <img src="{{ asset('/storage/' . $product->getImage()) }}" class="img-fluid rounded-start">
+                @if (isset($product->image))
+                    <img src="{{ asset('/storage/' . $product->image) }}" class="img-fluid rounded-start">
                 @endif
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ $product->getName() }} (${{ $product->getPrice() }})
+                    <h5 class="card-title"> {{ $product->name }} (${{ $product->price }})
                     </h5>
-                    <p class="card-text">{{ $product->getDescription() }}</p>
+                    <p class="card-text">{{ $product->description }}</p>
                     <p class="card-text">
-                    <form method="POST" action="{{ route('cart.add', ['id' => $product->getId()]) }}">
+                    <form method="POST" action="{{ route('cart.add', $product->id) }}">
                         <div class="row">
                             @csrf
                             <div class="col-auto">

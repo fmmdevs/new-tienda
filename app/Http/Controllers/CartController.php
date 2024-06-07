@@ -30,10 +30,18 @@ class CartController extends Controller
 
     public function add(Request $request, $id)
     {
+        // obtenemos el array con los productos de la sesion. key: id del producto value: cantidad de productos
         $products = $request->session()->get("products");
-        $products[$id] = $request->input("quantity");
+        // añadimos usando como key el id del producto
+        if ($products[$id]) {
+            // Si existe una cantidad de el producto con esta id, añadimos la cantidad que hemos comprado a la que teniamos en el carrito
+            $products[$id] += $request->input("quantity");
+        } else {
+            $products[$id] = $request->input("quantity");
+        }
         $request->session()->put("products", $products);
 
+        // al comprar se quda en la carta, volver a la categoria donde estuviese?
         return redirect()->route("cart.index");
     }
 
@@ -47,37 +55,40 @@ class CartController extends Controller
     {
         $productsInSession = $request->session()->get("products");
         if ($productsInSession) {
-            $userId = Auth::user()->getId();
+            $userId = Auth::user()->id;
             $order = new Order();
-            $order->setUserId($userId);
-            $order->setTotal(0);
+            $order->user_id = $userId;
+            $order->total = 0;
+            // Guardamos para generar id
             $order->save();
 
             $total = 0;
+            // obtenemos los productos que tenemos en el carrito
             $productsInCart = Product::findMany(array_keys($productsInSession));
             //Recorremos los productos que tenemos en el carrito
             foreach ($productsInCart as $product) {
                 // $productsInSession es un array asociativo cuya
                 // clave es la id y el valor es la cantidad de ese producto
-                $quantity = $productsInSession[$product->getId()];
+                $quantity = $productsInSession[$product->id];
                 // Por cada producto que tengamos en el carrito, creamos un nuevo item
                 $item = new Item();
-                $item->setQuantity($quantity);
-                $item->setPrice($product->getPrice());
-                $item->setProductId($product->getId());
-                $item->setOrderId($order->getId());
+                $item->quantity = $quantity;
+                $item->price = $product->price;
+                $item->product_id = $product->id;
+                // aqui usamos la id que hemos generado al hacer $order->save()
+                $item->order_id = $order->id;
                 $item->save();
                 // Vamos calculando el total
-                $total = $total + ($product->getPrice() * $quantity);
+                $total = $total + ($product->price * $quantity);
             }
             // Añadimos el total calculado a la orden
-            $order->setTotal($total);
+            $order->total = $total;
+            // volvemos a guardar la orden para que se registre el cambio en la tabla
             $order->save();
             // Eliminamos los productos de la sesion
             $request->session()->forget('products');
 
 
-            $viewData["order"] = $order;
             return view('cart.purchase', compact('order'));
         } else {
             return redirect()->route('cart.index');
