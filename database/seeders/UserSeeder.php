@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         // Creamos usuario admin
         User::create([
-            'name' => 'admin',
+            'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => 'admin',
             'balance' => 9999999,
@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         ]);
         // Creamos user1, con rol user
         User::create([
-            'name' => 'user1',
+            'name' => 'User1',
             'email' => 'user1@user1.com',
             'password' => 'user1',
             'balance' => 999,
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
         ]);
         // Creamos user2, con rol user
         User::create([
-            'name' => 'user2',
+            'name' => 'User2',
             'email' => 'user2@user2.com',
             'password' => 'user2',
             'balance' => 9999,

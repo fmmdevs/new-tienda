@@ -33,7 +33,7 @@ class CartController extends Controller
         // obtenemos el array con los productos de la sesion. key: id del producto value: cantidad de productos
         $products = $request->session()->get("products");
         // añadimos usando como key el id del producto
-        if ($products[$id]) {
+        if (isset($products[$id])) {
             // Si existe una cantidad de el producto con esta id, añadimos la cantidad que hemos comprado a la que teniamos en el carrito
             $products[$id] += $request->input("quantity");
         } else {

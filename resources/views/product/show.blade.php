@@ -2,7 +2,6 @@
 @section('title', 'Detail')
 {{-- @section('subtitle', $viewData['subtitle']) --}}
 @section('content')
-    <h1>Show</h1>
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
