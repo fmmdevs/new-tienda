@@ -127,6 +127,16 @@ y dentro del dropdown puede hacer logout --}}
                 </div>
             </nav>
             <div class="container d-flex align-items-center flex-column">
+                @if (Auth::user() && Auth::user()->email_verified_at == null)
+                    {{-- Si el usuario esta autenticado y no ha verificado su email mostramos un mensaje --}}
+                    <div class="alert alert-light alert-dismissible fade show" role="alert">
+                        "¡Hola! 🎉 Te hemos enviado un correo electrónico muy importante. Por favor, revisa tu bandeja
+                        de entrada y haz clic en el botón para <strong>verificar</strong> tu dirección de <strong>correo
+                            electrónico</strong>. ¡Gracias!
+                        ✉️"
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <h2>@yield('subtitle')</h2>
             </div>
             <main class="py-4">

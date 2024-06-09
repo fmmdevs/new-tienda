@@ -9,8 +9,9 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 // Atajo con todas las rutas necesarias autenticar usuarios
-Auth::routes();
-
+// Auth::routes();
+// Para habilitar las rutar de verificacion de email, ademas de las de autenticar usuario
+Auth::routes(['verify' => true]);
 
 // Rutas home
 Route::get('/', [HomeController::class, 'index'])
@@ -85,3 +86,13 @@ Route::middleware('admin')->group(function () {
     Route::put('/admin/categories/{id}/update', [AdminCategoryController::class, 'update'])
         ->name('admin.category.update');
 });
+
+// Rutas disponibles solo para usuarios que hayan verificado su email
+// Route::get('/home', 'HomeController@index')->middleware('verified');
+
+
+// // Ruta para email testing
+// Route::get('/test-mail', function () {
+//     Notification::route('mail', 'yourMailtrapEmailAddress')->notify(new NewMessage());
+//     return 'Sent';
+// });
