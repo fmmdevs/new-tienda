@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', [CartController::class, 'purchase'])->name("cart.purchase");
 
     Route::get('/my-account/orders', [MyAccountController::class, 'orders'])->name("myaccount.orders");
+
+    Route::get('/my-account/orders/{id}/pdf', [MyAccountController::class, 'downloadPdf'])->name("myaccount.pdf");
 });
 
 // Middleware admin: ruta solo disponible para usuarios cuyo rol sea admin

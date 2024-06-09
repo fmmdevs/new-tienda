@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@
                             <li class="nav-item dropdown mx-md-4 mx-lg-5">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ __('Categories') }}
+                                    Categorías
                                 </a>
                                 <ul class="dropdown-menu">
                                     {{-- Generamos las categorias de forma dinamica usando un view composer --}}
@@ -62,19 +62,19 @@
     <a class="nav-link" href="{{ route('product.index') }}">{{ __('Categories') }}</a>
 </li> --}}
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('cart.index') }}">{{ __('Cart') }}</a>
+                                <a class="nav-link" href="{{ route('cart.index') }}">Cesta</a>
                             </li>
                             @auth
                                 {{-- Si esta autenticado mostramos My orders --}}
                                 <li class="nav-item ms-md-4 ms-lg-5">
-                                    <a class="nav-link " href="{{ route('myaccount.orders') }}">My Orders</a>
+                                    <a class="nav-link " href="{{ route('myaccount.orders') }}">Pedidos</a>
                                 </li>
                             @endauth
                             <li class="nav-item mx-md-4 mx-lg-5">
-                                <a class="nav-link" href="{{ route('home.contact') }}">{{ __('Contact') }}</a>
+                                <a class="nav-link" href="{{ route('home.contact') }}">Contacto</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('home.about') }}">{{ __('About') }}</a>
+                                <a class="nav-link" href="{{ route('home.about') }}">Conócenos</a>
                             </li>
 
                         </ul>
@@ -96,7 +96,7 @@
                             @else
                                 {{-- Si esta autenticado aparece un dropdown con su nombre de usuario
 y dentro del dropdown puede hacer logout --}}
-                                <li class="nav-item dropdown">
+                                <li class="nav-item dropdown ms-md-4 border">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
@@ -144,9 +144,8 @@ y dentro del dropdown puede hacer logout --}}
             </main>
         </div>
 
-        <footer class="copyright py-4 text-center text-black">
-            <div class="container"> <small> Copyright - 2024 </small> </div>
-        </footer>
+
+        @include('layouts._partials.footer')
     </div>
 
 

@@ -15,180 +15,180 @@ class ProductSeeder extends Seeder
     {
         // Women T-shirts black
         Product::create([
-            'name' => 'Black One',
+            'name' => 'Negro Clásico',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/black-1.jpeg',
+            'image' => 'img/seeds/men/black-1.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Black Two',
+            'name' => 'Tinta Negra',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/black-2.jpeg',
+            'image' => 'img/seeds/men/black-2.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Black Three',
+            'name' => 'Ébano Simple',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/black-3.jpeg',
+            'image' => 'img/seeds/men/black-3.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Black Four',
+            'name' => 'Noir Básico',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/black-4.jpeg',
+            'image' => 'img/seeds/men/black-4.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
 
         // Women T-shirts grey
         Product::create([
-            'name' => 'Grey One',
+            'name' => 'Gris Esencial',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/grey-1.jpeg',
+            'image' => 'img/seeds/men/grey-1.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Grey Two',
+            'name' => 'Plata Simple',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/grey-2.jpeg',
+            'image' => 'img/seeds/men/grey-2.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Grey Three',
+            'name' => 'Gris Clásico',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/grey-3.jpeg',
+            'image' => 'img/seeds/men/grey-3.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'Grey Four',
+            'name' => 'Neblina Neutra',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/grey-4.jpeg',
+            'image' => 'img/seeds/men/grey-4.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
 
         // Women T-shirts white
         Product::create([
-            'name' => 'White One',
+            'name' => 'Blanco Puro',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/white-1.jpeg',
+            'image' => 'img/seeds/men/white-1.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'White Two',
+            'name' => 'Alba Simple',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/white-2.jpeg',
+            'image' => 'img/seeds/men/white-2.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'White Three',
+            'name' => 'Nieve Clásica',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/white-3.jpeg',
+            'image' => 'img/seeds/men/white-3.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
         Product::create([
-            'name' => 'White Four',
+            'name' => 'Lienzo Blanco',
             'description' => 'Bueno',
-            'image' => 'img/seeds/women/white-4.jpeg',
+            'image' => 'img/seeds/men/white-4.jpeg',
             'price' => 10,
             'category_id' => 2
         ]);
 
         // Men T-shirts black
         Product::create([
-            'name' => 'Black One',
+            'name' => 'Negro Elegante',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/black-1.jpeg',
+            'image' => 'img/seeds/women/black-1.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Black Two',
+            'name' => 'Dama Oscura',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/black-2.jpeg',
+            'image' => 'img/seeds/women/black-2.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Black Three',
+            'name' => 'Noche Sencilla',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/black-3.jpeg',
+            'image' => 'img/seeds/women/black-3.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Black Four',
+            'name' => 'Sombra Femenina',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/black-4.jpeg',
+            'image' => 'img/seeds/women/black-4.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
 
         // Men T-shirts grey
         Product::create([
-            'name' => 'Gray One',
+            'name' => 'Gris Suave',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/grey-1.jpeg',
+            'image' => 'img/seeds/women/grey-1.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Gray Two',
+            'name' => 'Nube Neutra',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/grey-2.jpeg',
+            'image' => 'img/seeds/women/grey-2.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Gray Three',
+            'name' => 'Gris Sutil',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/grey-3.jpeg',
+            'image' => 'img/seeds/women/grey-3.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'Gray Four',
+            'name' => 'Platino Simple',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/grey-4.jpeg',
+            'image' => 'img/seeds/women/grey-4.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
 
         // Men T-shirts white
         Product::create([
-            'name' => 'White One',
+            'name' => 'Blanca Pura',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/white-1.jpeg',
+            'image' => 'img/seeds/women/white-1.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'White Two',
+            'name' => 'Nieve Simple',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/white-2.jpeg',
+            'image' => 'img/seeds/women/white-2.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'White Three',
+            'name' => 'Marfil Clásico',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/white-3.jpeg',
+            'image' => 'img/seeds/women/white-3.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);
         Product::create([
-            'name' => 'White Four',
+            'name' => 'Alba Elegante',
             'description' => 'Bueno',
-            'image' => 'img/seeds/men/white-4.jpeg',
+            'image' => 'img/seeds/women/white-4.jpeg',
             'price' => 10,
             'category_id' => 1
         ]);

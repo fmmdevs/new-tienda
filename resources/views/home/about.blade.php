@@ -28,7 +28,7 @@
 
             <h2>Contacto</h2>
             <p>Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros a través de nuestra <a
-                    href="contact.html">página de contacto</a>. Estamos aquí para ayudarte.</p>
+                    href="{{ route('home.contact') }}">página de contacto</a>. Estamos aquí para ayudarte.</p>
         </div>
     </div>
 

@@ -15,10 +15,11 @@ class CategorySeeder extends Seeder
     {
         //
         Category::create([
-            'name' => 'Men'
+            'name' => 'Mujer'
         ]);
+
         Category::create([
-            'name' => 'Women'
+            'name' => 'Hombre'
         ]);
     }
 }

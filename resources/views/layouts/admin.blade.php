@@ -24,10 +24,10 @@
                 <hr />
                 <ul class="nav flex-column">
                     <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Home</a></li>
-                    <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">Products</a></li>
-                    <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">Categories</a>
+                    <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">Productos</a></li>
+                    <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">Categorías</a>
                     </li>
-                    <li> <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Home</a> </li>
+                    <li> <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Tienda</a> </li>
                 </ul>
             </div>
             <!-- sidebar -->
@@ -43,9 +43,8 @@
             </div>
         </div>
         <!-- footer -->
-        <footer class="copyright py-4 text-center text-black">
-            <div class="container"> <small> Copyright - 2024 </small> </div>
-        </footer>
+        @include('layouts._partials.footer')
+
         <!-- footer -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
