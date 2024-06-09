@@ -43,7 +43,7 @@
         </div>
 
     @empty
-        <div class="alert alert-danger" role="alert"> Parece que aún no has comprado nada =(.
+        <div class="alert alert-danger text-center" role="alert"> Parece que aún no has comprado nada =(.
         </div>
     @endforelse
 @endsection
