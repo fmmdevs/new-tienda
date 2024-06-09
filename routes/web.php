@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\ProductController;
@@ -37,6 +38,9 @@ Route::get('/cart', [CartController::class, 'index'])->name("cart.index");
 Route::get('/cart/delete', [CartController::class, 'delete'])->name("cart.delete");
 
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name("cart.add");
+
+// Rutas contacto
+Route::post('/contact/store', [ContactFormController::class, 'store'])->name('contact.store');
 
 // Middlewares
 // Middleware auth: rutas  disponibles solo para usuarios autenticados, sean rol user o rol admin
@@ -87,6 +91,9 @@ Route::middleware('admin')->group(function () {
 
     Route::put('/admin/categories/{id}/update', [AdminCategoryController::class, 'update'])
         ->name('admin.category.update');
+
+    // Ruta inbox
+    Route::get('admin/inbox', [ContactFormController::class, 'index'])->name('admin.inbox');
 });
 
 // Rutas disponibles solo para usuarios que hayan verificado su email

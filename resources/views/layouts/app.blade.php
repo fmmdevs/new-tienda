@@ -27,7 +27,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand me-2" href="{{ url('/') }}">
-                        Minimal T-shirts
+                        Minimal T-Shirts
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -50,7 +50,7 @@
                                     {{-- Generamos las categorias de forma dinamica usando un view composer --}}
                                     @foreach ($categories as $category)
                                         <li><a class="dropdown-item"
-                                                href="{{ route('product.index', $category->name) }}">{{ __($category->name) }}</a>
+                                                href="{{ route('product.index', $category->name) }}">{{ $category->name }}</a>
                                         </li>
                                     @endforeach
 
@@ -85,12 +85,12 @@
                             @guest
                                 {{-- Si no esta autenticado aparece Login y Register --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                                 </li>
 
                                 {{-- @if (Route::has('register')) --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Registro</a>
                                 </li>
                                 {{-- @endif --}}
                             @else

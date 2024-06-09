@@ -2,30 +2,44 @@
 @section('title', 'Contact')
 
 @section('content')
-    <div class="header">
-        <h1>Contáctanos</h1>
-        <p>En Minimal T-Shirts, nos encantaría saber de ti. Completa el siguiente formulario y nos pondremos en contacto
-            contigo lo antes posible.</p>
+    <div class="row">
+        <h1 class="text-center">Contacta con nosotros</h1>
     </div>
-    <form>
-        <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+    <div class="container d-flex align-items-center flex-column">
+        @if (isset($success))
+            {{-- Si el usuario esta autenticado y no ha verificado su email mostramos un mensaje --}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                "Formulario enviado correctamente"
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        <h2>@yield('subtitle')</h2>
+    </div>
+    <form class="row g-5 p-5 text-center text-md-start" method="post" action="{{ route('contact.store') }}">
+        @csrf
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Nombre</label>
+            <input name="name" type="text" class="form-control" id="inputEmail4">
         </div>
-        <div class="form-group">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="inputEmail4">
         </div>
-        <div class="form-group">
-            <label for="subject">Asunto:</label>
-            <input type="text" class="form-control" id="subject" placeholder="Ingresa el asunto" required>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Ciudad</label>
+            <input name="city" type="text" class="form-control" id="inputAddress">
         </div>
-        <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+
+        <div class="col-10>
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-custom btn-block">Enviar Mensaje</button>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
     </form>
-    </div>
+
 
 @endsection

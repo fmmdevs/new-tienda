@@ -24,6 +24,8 @@
                 <hr />
                 <ul class="nav flex-column">
                     <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Home</a></li>
+                    <li><a href="{{ route('admin.inbox') }}" class="nav-link text-white">Inbox</a></li>
+
                     <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">Productos</a></li>
                     <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">Categorías</a>
                     </li>
