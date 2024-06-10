@@ -25,37 +25,37 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-1.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-1.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
                     </div>
                     <div class="carousel-item " data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-2.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-2.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
                     </div>
                     <div class="carousel-item " data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-3.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-3.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
                     </div>
                     <div class="carousel-item " data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-4.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-4.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
                     </div>
                     <div class="carousel-item " data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-5.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-5.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
                     </div>
                     <div class="carousel-item " data-bs-interval="10000">
-                        <img src="img/carrousell/carrousell-6.jpeg" class="d-block w-100" alt="...">
+                        <img src="img/landing/carrousell/carrousell-6.jpeg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Verano 2024 - Moda Mujer</h5>
                         </div>
@@ -78,40 +78,42 @@
 
 
 
-
     <div class="container">
         <!-- En esta fila anido todos los elementos section para poder cambiar el orden de cada sección-->
-        <div class="row">
-
+        <div class="row ">
+            <hr>
             <!-- Ahora aplico la clase col-12 y la ordenación pertinente -->
-            <section id="camisetas-hombre" class="col-12 col-sm-6 col-md-6">
-                <div class="row d-sm-flex justify-content-center align-items-center">
-                    <div class="col-12">
-                        <img src="img2/camisetas-hombre.jpg" alt="Camisetas para Hombre">
-                    </div>
-                    <div class="col-12 ">
-                        <h2>Camisetas para Hombre</h2>
+            <section id="camisetas-hombre" class="col-12 ">
+                <a href="{{ route('product.index', 'Hombre') }}"
+                    class="row d-sm-flex justify-content-center align-items-center p-5">
+                    <div class="col-12 col-sm-6 col-lg-12 order-sm-1 order-lg-1 text-lg-center">
+                        <h2 class="text-lg-center">Camisetas para Hombre</h2>
                         <p>Descubre nuestra colección de camisetas minimalistas para hombre, diseñadas para combinar con
                             cualquier estilo y ocasión.</p>
                     </div>
-
-                </div>
+                    <div class="col-12 col-sm-6 col-lg-12 order-sm-1 order-lg-2 d-flex justify-content-center">
+                        <img class="main-img" src="img/landing/main/man.jpeg" alt="Camisetas para Hombre">
+                    </div>
+                </a>
             </section>
+            <hr>
 
-            <section id="camisetas-mujer" class="col-12">
-                <div class="row d-sm-flex justify-content-center align-items-center">
-                    <div class="col-12 col-sm-6 col-lg-12 order-sm-2 ">
+            <section id="camisetas-mujer" class="col-12 p-5 ">
+                <a href="{{ route('product.index', 'Mujer') }}"
+                    class="row d-sm-flex justify-content-center align-items-center">
+                    <div class="col-12 col-sm-6 col-lg-12 order-sm-2 order-lg-1 text-lg-center">
                         <h2>Camisetas para Mujer</h2>
                         <p>Explora nuestra selección de camisetas minimalistas para mujer, perfectas para un look elegante y
                             sencillo.</p>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-12 order-sm-1 ">
-                        <img src="img2/camisetas-mujer.jpg" alt="Camisetas para Mujer">
+                    <div class="col-12 col-sm-6 col-lg-12 order-sm-1 order-lg-2 d-flex justify-content-center">
+                        <img class="main-img" src="img/landing/main/woman.jpeg" alt="Camisetas para Mujer">
                     </div>
-                </div>
+                </a>
             </section>
+            <hr>
 
-            <section id="sobre-nosotros" class="col-12">
+            {{-- <section id="sobre-nosotros" class="col-12">
                 <div class="row d-sm-flex justify-content-center align-items-center">
                     <div class="col-12 col-sm-6 col-lg-12 order-sm-1 order-lg-1">
                         <h2>Sobre Nosotros</h2>
@@ -122,16 +124,21 @@
                         <img src="img2/sobre-nosotros.jpg" alt="Sobre Nosotros">
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
-            <section id="nuestro-equipo" class="col-12">
-                <h2>Nuestro Equipo</h2>
+            <section id="nuestro-equipo" class="col-12 p-5">
                 <div class="row">
-                    <div class="col-lg-4 miembro">
+                    <div class="col-12">
+                        <h2 class="text-center">Nuestro Equipo</h2>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-4 miembro p-4">
                         <div class="row d-sm-flex justify-content-center align-items-center">
                             <div class="offset-3 offset-sm-1 d-lg-none"></div>
                             <div class="col-6 col-sm-5 col-lg-10 scale-up-center">
-                                <img class="rounded-circle" src="img2/equipo1.jpg" alt="Miembro del Equipo 1">
+                                <img class="rounded-circle" src="img/landing/team/designer.jpeg" alt="Diseñadora">
                             </div>
                             <div class="offset-3 d-sm-none"></div>
                             <div class="offset-sm-1 d-lg-none"></div>
@@ -143,11 +150,11 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 miembro">
+                    <div class="col-lg-4 miembro p-4">
                         <div class="row d-sm-flex justify-content-center align-items-center">
                             <div class="offset-3 offset-sm-1 d-lg-none"></div>
                             <div class="col-6 col-sm-5 col-lg-10 scale-up-center">
-                                <img class="rounded-circle" src="img2/equipo2.jpg" alt="Miembro del Equipo 2">
+                                <img class="rounded-circle" src="img/landing/team/salesman.jpeg" alt="Gerente de ventas">
                             </div>
                             <div class="offset-3 d-sm-none"></div>
                             <div class="offset-sm-1 d-lg-none"></div>
@@ -159,11 +166,12 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 miembro">
+                    <div class="col-lg-4 miembro p-4">
                         <div class="row d-sm-flex justify-content-center align-items-center">
                             <div class="offset-3 offset-sm-1 d-lg-none"></div>
                             <div class="col-6 col-sm-5 col-lg-10 scale-up-center">
-                                <img class="rounded-circle" src="img2/equipo3.jpg" alt="Miembro del Equipo 3">
+                                <img class="rounded-circle" src="img/landing/team/customer-service.jpeg"
+                                    alt="Atención al cliente">
                             </div>
                             <div class="offset-3 d-sm-none"></div>
                             <div class="offset-sm-1 d-lg-none"></div>
@@ -177,4 +185,5 @@
             </section>
         </div>
     </div>
+
 @endsection
