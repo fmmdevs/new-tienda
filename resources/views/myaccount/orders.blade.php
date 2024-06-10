@@ -3,15 +3,15 @@
 @section('content')
     @forelse ($orders as $order)
         <div class="card mb-4">
-            <div class="card-header"> Order #{{ $order->id }} </div>
+            <div class="card-header"> Pedido #{{ $order->id }} </div>
             <div class="card-body">
-                <b>Date:</b> {{ $order->created_at }}
+                <b>Fecha:</b> {{ $order->created_at }}
                 <br />
                 <b>Total:</b> {{ $order->total }}€<br />
                 <table class="table table-bordered table-striped text-center mt-3">
                     <thead>
                         <tr>
-                            <th scope="col">Item ID</th>
+                            <th scope="col">Id Producto</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Categoría</th>

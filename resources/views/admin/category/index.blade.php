@@ -2,7 +2,7 @@
 @section('title', 'Admin Categories')
 @section('content')
     <div class="card mb-4">
-        <div class="card-header"> Create Products </div>
+        <div class="card-header"> Crear Productos </div>
         <div class="card-body">
             @if ($errors->any())
                 <ul class="alert alert-danger list-unstyled">
@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input name="name" type="text" class="form-control">
                             </div>
@@ -26,18 +26,18 @@
 
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
     <div class="card">
-        <div class="card-header"> Manage Categories </div>
+        <div class="card-header"> Gestionar Categorías </div>
         <div class="card-body">
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Nombre</th>
 
                     </tr>
                 </thead>

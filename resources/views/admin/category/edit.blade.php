@@ -2,7 +2,7 @@
 @section('title', 'Edit Category')
 @section('content')
     <div class="card mb-4">
-        <div class="card-header"> Edit Category
+        <div class="card-header"> Editar Categoria
 
         </div>
         <div class="card-body">
@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input name="name" value="{{ $category->name }}" type="text" class="form-control">
                             </div>
@@ -29,7 +29,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Editar</button>
             </form>
         </div>
     </div>

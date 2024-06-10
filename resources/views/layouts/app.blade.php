@@ -85,7 +85,7 @@
                             @guest
                                 {{-- Si no esta autenticado aparece Login y Register --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Inicio de sesión</a>
                                 </li>
 
                                 {{-- @if (Route::has('register')) --}}
@@ -105,12 +105,12 @@ y dentro del dropdown puede hacer logout --}}
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         @if (Auth::user()->role == 'admin')
                                             <a class="dropdown-item" href="{{ route('admin.home.index') }}">
-                                                {{ __('Admin Panel') }} </a>
+                                                {{ __('Panel de Administrador') }} </a>
                                         @endif
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Cerrar sesión') }}
                                         </a>
 
 

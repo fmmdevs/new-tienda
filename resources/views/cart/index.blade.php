@@ -11,7 +11,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Categoria</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Cantidad</th>
                     </tr>
                 </thead>
                 <tbody>

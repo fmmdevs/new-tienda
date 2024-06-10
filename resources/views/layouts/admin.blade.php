@@ -19,12 +19,12 @@
             <!-- sidebar -->
             <div class="p-3 col-4 col-md-2  fixed text-white bg-dark text-center vh-100">
                 <a href="{{ route('admin.home.index') }}" class="text-white text-decoration-none">
-                    <span class="fs-4">Admin Panel</span>
+                    <span class="fs-4">Panel de Administrador</span>
                 </a>
                 <hr />
                 <ul class="nav flex-column">
-                    <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Home</a></li>
-                    <li><a href="{{ route('admin.inbox') }}" class="nav-link text-white">Inbox</a></li>
+                    <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Inicio</a></li>
+                    <li><a href="{{ route('admin.inbox') }}" class="nav-link text-white">Correo</a></li>
 
                     <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">Productos</a></li>
                     <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">Categorías</a>
