@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,8 @@ class AdminCategoryController extends Controller
         return view('admin.category.index', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        Category::validate($request);
         $newCategory = new Category();
         $newCategory->name = $request->input('name');
         $newCategory->save();
@@ -36,9 +36,8 @@ class AdminCategoryController extends Controller
         return view("admin.category.edit", compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        Category::validate($request);
         $category = Category::findOrFail($id);
         $category->name = $request->input('name');
         $category->save();

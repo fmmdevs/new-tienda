@@ -7,7 +7,7 @@
             <div class="card-body">
                 <b>Date:</b> {{ $order->created_at }}
                 <br />
-                <b>Total:</b> ${{ $order->total }}<br />
+                <b>Total:</b> {{ $order->total }}€<br />
                 <table class="table table-bordered table-striped text-center mt-3">
                     <thead>
                         <tr>
@@ -26,7 +26,7 @@
                                     <a class="link-success" href="{{ route('product.show', $item->product->id) }}">
                                         {{ $item->product->name }} </a>
                                 </td>
-                                <td>${{ $item->price }}</td>
+                                <td>{{ $item->price }}€</td>
                                 <td>{{ $item->product->category->name }}</td>
                                 <td>{{ $item->quantity }}</td>
                             </tr>

@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ $product->name }} (${{ $product->price }})
+                    <h5 class="card-title"> {{ $product->name }} ({{ $product->price }}€)
                     </h5>
                     <p class="card-text">{{ $product->description }}</p>
                     <p class="card-text">

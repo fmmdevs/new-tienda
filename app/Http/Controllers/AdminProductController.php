@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,17 +20,13 @@ class AdminProductController extends Controller
         return view('admin.product.index', compact('products', 'categories'));
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        // Validations in model
-        Product::validate($request);
-
         $newProduct = new Product();
-        $newProduct->name = $request->input('name');
-        $newProduct->description = $request->input('description');
-        $newProduct->price = $request->input('price');
-
-        $newProduct->category_id = $request->input('category');
+        $newProduct->name = $request->name;
+        $newProduct->description = $request->description;
+        $newProduct->price = $request->price;
+        $newProduct->category_id = $request->category;
         // Guardamos aqui para que se iniciacialice id
         $newProduct->save();
 
@@ -39,9 +36,6 @@ class AdminProductController extends Controller
             $imageName = $newProduct->id . "." . $request->file('image')->extension();
             Storage::disk('public')->put($imageName, file_get_contents($request->file('image')->getRealPath()));
             $newProduct->image = $imageName;
-        } else {
-            // Revisar
-            $newProduct->setImage("default.jpeg");
         }
 
         $newProduct->save();
@@ -63,10 +57,8 @@ class AdminProductController extends Controller
         return view("admin.product.edit", compact('product', 'categories'));
     }
 
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        // Validations in model
-        Product::validate($request);
 
         $product = Product::findOrFail($id);
         $product->name = $request->input('name');

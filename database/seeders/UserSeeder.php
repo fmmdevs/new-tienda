@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => 'admin',
             'balance' => 9999999,
-            'role' => 'admin'
+            'role' => 'admin',
+            'email_verified_at' => '2024-06-09 12:00:00'
         ]);
         // Creamos user1, con rol user
         User::create([
@@ -27,7 +28,9 @@ class UserSeeder extends Seeder
             'email' => 'user1@user1.com',
             'password' => 'user1',
             'balance' => 999,
-            'role' => 'user'
+            'role' => 'user',
+            'email_verified_at' => '2024-06-09 12:00:00'
+
         ]);
         // Creamos user2, con rol user
         User::create([
@@ -35,7 +38,9 @@ class UserSeeder extends Seeder
             'email' => 'user2@user2.com',
             'password' => 'user2',
             'balance' => 9999,
-            'role' => 'user'
+            'role' => 'user',
+            'email_verified_at' => '2024-06-09 12:00:00'
+
         ]);
     }
 }

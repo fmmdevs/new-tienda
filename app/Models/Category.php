@@ -10,13 +10,6 @@ class Category extends Model
 {
     use HasFactory;
 
-    public static function validate($request)
-    {
-        $request->validate([
-            "name" => "required|max:10",
-        ]);
-    }
-
     public function products(): HasMany
     {
         // Una categoria puede estar en varios productos
