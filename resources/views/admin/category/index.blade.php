@@ -2,7 +2,7 @@
 @section('title', 'Admin Categories')
 @section('content')
     <div class="card mb-4">
-        <div class="card-header"> Crear Productos </div>
+        <div class="card-header"> Crear Categorías </div>
         <div class="card-body">
             @if ($errors->any())
                 <ul class="alert alert-danger list-unstyled">
