@@ -34,6 +34,8 @@ class AdminProductController extends Controller
         if ($request->hasFile('image')) {
             // Vamos a nombrar a la imagen con el id del producto seguido de su extension
             $imageName = $newProduct->id . "." . $request->file('image')->extension();
+            // Guardamos el archivo en storage/app/public, para poder acceder a ellos desde la web tenemos que crear
+            // un enlace simbolico con php artisan storage:link
             Storage::disk('public')->put($imageName, file_get_contents($request->file('image')->getRealPath()));
             $newProduct->image = $imageName;
         }

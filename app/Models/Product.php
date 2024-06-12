@@ -15,6 +15,8 @@ class Product extends Model
     {
         $total = 0;
         foreach ($products as $product) {
+            // en el array productsInSession tenemos idProducto => cantidad
+            // recorremos los productos multiplicando el precio por la cantidad y agregandoselo al total
             $total = $total + ($product->price * $productsInSession[$product->id]);
         }
         return $total;

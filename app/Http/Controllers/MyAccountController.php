@@ -13,6 +13,7 @@ class MyAccountController extends Controller
     {
         // Obtenemos los pedidos que ha hecho el usuario que esta autenticado
         $orders = Order::where('user_id', Auth::user()->id)->get();
+        // Los enviamos a la vista
         return view('myaccount.orders', compact('orders'));
     }
 

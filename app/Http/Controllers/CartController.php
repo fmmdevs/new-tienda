@@ -12,13 +12,21 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $total = 0;
-        $productsInCart = [];
+        // Inicializamos las variables
+        $total = 0; // precio total
+        $productsInCart = []; // productos que vamos a obtener de la bbdd
 
+        // Recuperamos el array products de la session,
+        // las claves de este array son ID de producto y los valores la cantidad de cada producto
         $productsInSession = $request->session()->get("products");
 
+        // Comprobamos si tenemos ya productos en el carrito
         if ($productsInSession) {
+            // Obtenemos un array con los productos usando array_keys, basicamente
+            // le pasamos un array a la funcion findMany con las id de los productos y los traemos de la bbdd
+            // seria como select * from products where id in ([id1,id2,id3,....])
             $productsInCart = Product::findMany(array_keys($productsInSession));
+            // Usamos el metodo estatico sumPricesByQuantitis para calcular el total
             $total = Product::sumPricesByQuantities($productsInCart, $productsInSession);
         }
 
@@ -28,6 +36,7 @@ class CartController extends Controller
         return view("cart.index", compact('products', 'total'));
     }
 
+    // Añadir producto al carrito
     public function add(Request $request, $id)
     {
         // obtenemos el array con los productos de la sesion. key: id del producto value: cantidad de productos
@@ -39,14 +48,15 @@ class CartController extends Controller
         } else {
             $products[$id] = $request->input("quantity");
         }
+        // actualizamos el products en la sesion
         $request->session()->put("products", $products);
 
-        // al comprar se quda en la carta, volver a la categoria donde estuviese?
         return redirect()->route("cart.index");
     }
 
     public function delete(Request $request)
     {
+        // Eliminamos products de la sesion
         $request->session()->forget("products");
         return back();
     }
