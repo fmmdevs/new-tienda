@@ -72,3 +72,5 @@ Los datos de acceso del usuario admin
  'password' => 'admin',
 ```
 (en database/seeders vienen todos las categorias, productos y usuarios que hemos añadido)
+
+ "This project is licensed under the terms of the CC-BY-SA license. https://creativecommons.org/licenses/by/4.0/deed.es"
